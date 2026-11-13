@@ -1,0 +1,39 @@
+h1 {
+  color: #fff !important;
+  font-size: 1.6rem !important;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+h1 .text-blue {
+  color: #2B90B6 !important;
+}
+h1 .text-red {
+  color: #C0594F !important;
+}
+.slidev-vclick-target {
+  transition: opacity 0.6s ease !important;
+}
+
+.slidev-vclick-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.left-math .katex-display,
+.left-math .katex-display > .katex {
+  text-align: left !important;
+}
+
+.point-pulse {
+  animation: point-reach 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes point-reach {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 12px -12px;
+  }
+}
