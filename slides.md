@@ -82,7 +82,7 @@ rPPG is a non-contact method that captures subtle, cardiac-driven color variatio
 </div>
 
 <div v-click="[1, 2]" class="flex flex-col items-center mt-6">
-  <video src="/rppg_sim.mp4" class="h-75" autoplay muted loop playsinline></video>
+  <video :src="base + 'rppg_sim.mp4'" class="h-75" autoplay muted loop playsinline></video>
 </div>
 
 <div v-click="[1, 2]" class="absolute bottom-5 left-10 right-16 text-[10px] opacity-70 text-left">
@@ -103,7 +103,7 @@ rPPG is a non-contact method that captures subtle, cardiac-driven color variatio
   <video
     v-for="i in 5"
     :key="i"
-    :src="`/${i}_app.mp4`"
+    :src="`/${base}${i}_app.mp4`"
     autoplay
     muted
     loop
@@ -154,6 +154,10 @@ rPPG is a non-contact method that captures subtle, cardiac-driven color variatio
 
 <div v-click="6" class="hidden"></div>
 
+<script setup>
+const base = import.meta.env.BASE_URL
+</script>
+
 <!--
 Let me start by giving a brief idea of the term Remote Photoplethysmography (rPPG).
 
@@ -180,7 +184,7 @@ transition: fade-out
 
 <div class="w-80 flex flex-col items-center">
   <p>Telemedicine increasingly relies on video-based consultation, yet its remote monitoring still mostly depends on <span class="text-red">contact sensors</span>.</p>
-  <video v-if="$clicks < 1" src="/contact.mp4" class="h-70" autoplay muted loop playsinline></video>
+  <video v-if="$clicks < 1" :src="base + 'contact.mp4'" class="h-70" autoplay muted loop playsinline></video>
 
   <div v-click="1" class="absolute w-80 top-55">
     <p>
@@ -188,7 +192,7 @@ transition: fade-out
       Example: Microsoft's
       <a href="https://microsoft.github.io/VoluMe/" target="_blank">VoluMe</a>
     </p>
-    <LoopVideo src="/4.mp4" class="w-38 absolute left-15 gap-12 mt-1" />
+    <LoopVideo :src="base + '4.mp4'" class="w-38 absolute left-15 gap-12 mt-1" />
   </div>
 </div> 
 
@@ -251,6 +255,10 @@ h1 .text-blue {
 }
 </style>
 
+<script setup>
+const base = import.meta.env.BASE_URL
+</script>
+
 <!--
 However, while video consultations are becoming increasingly common in telemedicine, remote monitoring still largely relies on contact sensors, which are uncomfortable and inconvenient to use, especially for elderly people and kids.
 
@@ -284,14 +292,18 @@ transition: fade-out
 
 <v-click>
 <div class="flex items-center mt-23" :style="{ opacity: ($clicks >= 3 && $clicks < 9) ? 0.3 : undefined, transition: 'opacity 0.3s' }">
-  <LoopVideo src="/1.mp4" class="h-28" />
+  <LoopVideo :src="base + '1.mp4'" class="h-28" />
 </div>
 <div class="flex items-center mt-2" :style="{ opacity: ($clicks >= 3 && $clicks < 9) ? 0.3 : undefined, transition: 'opacity 0.3s' }">
-  <LoopVideo src="/4.mp4" class="h-28" />
+  <LoopVideo :src="base + '4.mp4'" class="h-28" />
 </div>
 <div class="flex items-center gap-12 mt-2" :style="{ opacity: ($clicks >= 3 && $clicks < 9) ? 0.3 : undefined, transition: 'opacity 0.3s' }">
-  <LoopVideo src="/3.mp4" class="h-28" />
+  <LoopVideo :src="base + '3.mp4'" class="h-28" />
 </div>
+
+<script setup>
+const base = import.meta.env.BASE_URL
+</script>
 
 <div class="absolute right3 bottom-6 text-xs opacity-70 flex flex-col items-end gap-1" :style="{ opacity: $clicks >= 9 ? 0 : ($clicks >= 3 ? 0.3 : undefined), transition: 'opacity 0.3s' }">
   <div class="flex items-center gap-2">
@@ -1065,10 +1077,12 @@ class: text-left
 import { ref } from 'vue'
 import { onSlideEnter, onSlideLeave } from '@slidev/client'
 
+const base = import.meta.env.BASE_URL
+
 const people = [
-  { video: '/4.mp4', image: '/PURE_ours.png' },
-  { video: '/1.mp4', image: '/p18_ours.png' },
-  { video: '/3.mp4', image: '/ubfc_ours.png' },
+  { video: base + '4.mp4', image: base + 'PURE_ours.png' },
+  { video: base + '1.mp4', image: base + 'p18_ours.png' },
+  { video: base + '3.mp4', image: base + 'ubfc_ours.png' },
 ]
 
 const personIndex = ref(0)
