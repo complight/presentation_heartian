@@ -50,7 +50,7 @@ onUnmounted(() => clearInterval(timer))
     <video
       v-for="n in names"
       :key="n"
-      :src="`/${base}${n}.mp4`"
+      :src="`${base}${n}.mp4`"
       autoplay
       muted
       playsinline

@@ -103,7 +103,7 @@ rPPG is a non-contact method that captures subtle, cardiac-driven color variatio
   <video
     v-for="i in 5"
     :key="i"
-    :src="`/${base}${i}_app.mp4`"
+    :src="`${base}${i}_app.mp4`"
     autoplay
     muted
     loop
