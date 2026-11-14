@@ -8,6 +8,7 @@ const props = defineProps({
 })
 
 const root = ref(null)
+const base = import.meta.env.BASE_URL
 let timer
 
 onMounted(async () => {
@@ -49,7 +50,7 @@ onUnmounted(() => clearInterval(timer))
     <video
       v-for="n in names"
       :key="n"
-      :src="`/${n}.mp4`"
+      :src="`/${base}${n}.mp4`"
       autoplay
       muted
       playsinline

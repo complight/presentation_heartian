@@ -67,7 +67,7 @@ SIGGRAPH Asia 2026 Technical Communications
 </style>
 
 <!--
-Hi everyone. I’m Xiaoyue Fan. Very happy to be here to share our work, Heartian: Physiology-Aware Relightable Gaussian Head Avatar. Before I start, I would like to give a shout-out to all my co-authors, Jose, Akshay and Kaan for all the support and guidance throughout this project.
+Hi everyone. I'm Xiaoyue Fan. Very happy to be here to share our work, Heartian: Physiology-Aware Relightable Gaussian Head Avatar. Before I start, I would like to give a shout-out to all my co-authors, Jose, Akshay and Kaan for all the support and guidance throughout this project.
 -->
 
 ---
